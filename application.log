@@ -1,0 +1,8 @@
+20-02-2018 21:18:41 INFO  Actionwords:136 - ****************************************************
+20-02-2018 21:18:41 INFO  Actionwords:137 - Test Started: testLoginIntoFreeCRM
+20-02-2018 21:19:00 INFO  Actionwords:114 - Test Passed: testLoginIntoFreeCRM
+20-02-2018 21:19:00 INFO  Actionwords:143 - Test Completed: testLoginIntoFreeCRM
+20-02-2018 21:19:01 INFO  Actionwords:136 - ****************************************************
+20-02-2018 21:19:01 INFO  Actionwords:137 - Test Started: testVerifyHomePageTitle
+20-02-2018 21:19:27 INFO  Actionwords:124 - Test Failed: testVerifyHomePageTitle
+20-02-2018 21:19:27 INFO  Actionwords:143 - Test Completed: testVerifyHomePageTitle
