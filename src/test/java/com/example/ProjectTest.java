@@ -1,58 +1,52 @@
 package com.example;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.example.Actionwords;
+import com.getLocator.GetLocator;
+import com.testBase.Actionwords;
+import com.testBase.Config;
 
 public class ProjectTest extends Actionwords {
 	private final Logger oLog = Logger.getLogger(ProjectTest.class);
 
+	private GetLocator getlocator;
 	
-	 Actionwords actionwords = new Actionwords();
-	
-
+/*	 public ProjectTest(WebDriver driver){
+		 this.driver = driver;		 
+	 }*/
+	 
 	
 	@BeforeMethod
 	public void setUp(){
-		driver = actionwords.getBrowser("chrome");
-//		oLog.info("Driver is initialized");
+		new Actionwords();
+		Config config = new Config(driver,OR);
+		//Actionwords instaceDriver = Actionwords.getInstance();
+		//driver = instaceDriver.getBrowser(config.getBrowser());
 	}
     
     
 	@Test
-    public void testLoginIntoFreeCRM() {
-        // TODO: Implement action: "Given Browser is opened"
-        // TODO: Implement action: "then Enter the username and password"
-        // TODO: Implement action: "then click on login button"
-        // TODO: Implement result: "and User should be able to login"
-		
-    	actionwords.login("http:\\www.freecrm.com");
-    	actionwords.generalSettings();
-    	
-		driver.findElement(By.name("username")).sendKeys("pankgupta20");
-		driver.findElement(By.name("password")).sendKeys("Password@123");
-		driver.findElement(By.xpath("//input[@type='submit']")).click();       
+    public void testLoginIntoFreeCRM() throws Exception {
+		getlocator = new GetLocator(driver,OR);
+    	login("http:\\www.freecrm.com");
+    	browserGeneralSettings();
+    	getlocator.getWebElement("username").sendKeys("pankgupta20");
+    	getlocator.getWebElement("password").sendKeys("Password@123");
+    	getlocator.getWebElement("submitbtn").click();   
+    	//driver.findElement(By.)
     }
 	
-    // HomePage title should display as expected
-    // 
-    // Tags: id:2 Priority:1
+
    @Test
-    public void testVerifyHomePageTitle() {
-        // TODO: Implement action: "Given User is logged-in"
-        // TODO: Implement action: "then get the title of the page"
-        // TODO: Implement result: "and HomePage title should be correct as expected"
-		   	actionwords.login("http:\\www.freecrm.com");
-		   	actionwords.generalSettings();
-		   	
-			driver.findElement(By.name("username")).sendKeys("pankgupta20");
-			driver.findElement(By.name("password")).sendKeys("Password@123");
-			driver.findElement(By.xpath("//input[@type='submit']")).click();
+    public void testVerifyHomePageTitle() throws Exception {
+		   	login("http:\\www.freecrm.com");
+		   	browserGeneralSettings();
+	    	getlocator.getWebElement("username").sendKeys("pankgupta20");
+	    	getlocator.getWebElement("password").sendKeys("Password@123");
+	    	getlocator.getWebElement("submitbtn").click(); 
     	
 			String ActTitle = driver.getTitle();
 			String ExpTitle = "FreeCRM";

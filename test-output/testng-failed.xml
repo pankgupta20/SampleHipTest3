@@ -5,10 +5,11 @@
     <classes>
       <class name="com.example.ProjectTest">
         <methods>
+          <include name="testLoginIntoFreeCRM"/>
           <include name="testVerifyHomePageTitle"/>
-          <include name="tearDown"/>
-          <include name="afterMethod"/>
+          <include name="launchBrowser"/>
           <include name="reportSetUp"/>
+          <include name="afterMethod"/>
           <include name="endTest"/>
           <include name="setUp"/>
         </methods>

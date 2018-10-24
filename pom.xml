@@ -92,6 +92,7 @@
         <profile>
             <id>selenium-tests</id>
             <build>
+                
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugin</groupId>
@@ -103,8 +104,12 @@
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
-                </plugins>
-            </build>
+                    
+                    
+                    
+			         					 	
+               </plugins>
+           </build>	
         </profile>
     </profiles>
   
